@@ -15,7 +15,8 @@ const codeData = [
   },
   {
     hash: "edee29f882543b956620b26d0ee0e7e950399b1c4222f5de05e06425b4c995e9",
-    clue: "Q2x1ZSAyOiBZb3UgZm91bmQgdGhlIHNlY29uZCBjbHVlIQ==",
+    clue: "",
+    filename: "c2.txt",
   },
   {
     hash: "318aee3fed8c9d040d35a7fc1fa776fb31303833aa2de885354ddf3d44d8fb69",
@@ -44,8 +45,24 @@ async function checkCode(idx) {
   }
   const hash = await sha256(input);
   if (hash === codeData[idx - 1].hash) {
-    clueDiv.textContent = decodeBase64(codeData[idx - 1].clue);
-    clueDiv.style.display = "block";
+    let clueHtml = "";
+    if (codeData[idx - 1].clue) {
+      clueHtml += `<div>${decodeBase64(codeData[idx - 1].clue)}</div>`;
+    }
+    if (codeData[idx - 1].filename) {
+      try {
+        const response = await fetch(codeData[idx - 1].filename);
+        if (!response.ok) throw new Error("Failed to load clue file.");
+        const imgBase64 = await response.text();
+        clueHtml += `<img src="data:image/png;base64,${imgBase64.trim()}" style="max-width:100%; margin-top:1em;">`;
+      } catch (e) {
+        errorDiv.textContent = "Error loading clue image.";
+      }
+    }
+    if (clueHtml) {
+      clueDiv.innerHTML = clueHtml;
+      clueDiv.style.display = "block";
+    }
   } else {
     errorDiv.textContent = "Incorrect code. Try again!";
   }
