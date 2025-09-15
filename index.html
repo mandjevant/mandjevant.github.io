@@ -1,9 +1,90 @@
 <!DOCTYPE html>
-<html>
-<body style="background-image: url('cmus.png'); background-repeat: no-repeat;">
-
-<img src="image0.jpg" style="width: auto; max-width: 100%; height: auto;">
-
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Codebreaker Portal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 500px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 2em;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+      }
+      .code-section {
+        margin-bottom: 2em;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5em;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        padding: 0.5em 1.5em;
+        border: none;
+        background: #0078d7;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:disabled {
+        background: #aaa;
+      }
+      .clue {
+        display: none;
+        margin-top: 1em;
+        padding: 1em;
+        background: #e0ffe0;
+        border-radius: 4px;
+      }
+      .error {
+        color: #b00;
+        margin-top: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Team Codebreaker Portal</h1>
+      <div class="code-section" id="section1">
+        <label for="code1">Enter Code 1:</label>
+        <input type="text" id="code1" autocomplete="off" />
+        <button onclick="checkCode(1)">Unlock Clue 1</button>
+        <div class="error" id="error1"></div>
+        <div class="clue" id="clue1"></div>
+      </div>
+      <div class="code-section" id="section2">
+        <label for="code2">Enter Code 2:</label>
+        <input type="text" id="code2" autocomplete="off" />
+        <button onclick="checkCode(2)">Unlock Clue 2</button>
+        <div class="error" id="error2"></div>
+        <div class="clue" id="clue2"></div>
+      </div>
+      <div class="code-section" id="section3">
+        <label for="code3">Enter Code 3:</label>
+        <input type="text" id="code3" autocomplete="off" />
+        <button onclick="checkCode(3)">Unlock Clue 3</button>
+        <div class="error" id="error3"></div>
+        <div class="clue" id="clue3"></div>
+      </div>
+    </div>
+    <script src="portal.js"></script>
+  </body>
 </html>
-
