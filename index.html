@@ -18,7 +18,7 @@
         min-height: 100vh;
         overflow-x: hidden;
       }
-      /* Fun animated background dots */
+      /* Fun animated background stars :) this is the best use of vibecoding */
       body::before {
         content: "";
         position: fixed;
@@ -26,29 +26,160 @@
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 0;
+        z-index: -1;
         pointer-events: none;
         background: radial-gradient(
-            circle at 20% 30%,
-            #0078d7 0px,
-            transparent 80px
+            circle at 10% 20%,
+            rgba(255, 255, 255, 0.95) 0px,
+            rgba(255, 255, 255, 0.9) 1px,
+            transparent 6px
           ),
-          radial-gradient(circle at 80% 70%, #7ecfff 0px, transparent 100px),
-          radial-gradient(circle at 60% 20%, #b6ffb6 0px, transparent 60px),
-          radial-gradient(circle at 40% 80%, #ff6b6b 0px, transparent 90px);
-        opacity: 0.1;
+          radial-gradient(
+            circle at 25% 40%,
+            rgba(255, 255, 255, 0.95) 0px,
+            rgba(255, 255, 255, 0.9) 1px,
+            transparent 5px
+          ),
+          radial-gradient(
+            circle at 40% 15%,
+            rgba(255, 255, 255, 0.95) 0px,
+            rgba(255, 255, 255, 0.9) 1.2px,
+            transparent 6px
+          ),
+          radial-gradient(
+            circle at 60% 30%,
+            rgba(255, 255, 255, 0.95) 0px,
+            rgba(255, 255, 255, 0.9) 1px,
+            transparent 5px
+          ),
+          radial-gradient(
+            circle at 80% 22%,
+            rgba(255, 255, 255, 0.95) 0px,
+            rgba(255, 255, 255, 0.9) 1px,
+            transparent 5px
+          ),
+          radial-gradient(
+            circle at 15% 75%,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 6px
+          ),
+          radial-gradient(
+            circle at 35% 85%,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 5px
+          ),
+          radial-gradient(
+            circle at 55% 70%,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 6px
+          ),
+          radial-gradient(
+            circle at 70% 50%,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 5px
+          ),
+          radial-gradient(
+            circle at 85% 85%,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 6px
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 255, 255, 0.95) 0px,
+            rgba(255, 255, 255, 0.9) 1.5px,
+            transparent 7px
+          ),
+          radial-gradient(
+            circle at 92% 30%,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 6px
+          );
+        opacity: 0.45;
+        mix-blend-mode: screen;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
         animation: movebg 12s linear infinite alternate;
       }
       @keyframes movebg {
         0% {
-          background-position: 20% 30%, 80% 70%, 60% 20%, 40% 80%;
+          transform: translate3d(0, 0, 0);
         }
         100% {
-          background-position: 25% 35%, 75% 65%, 65% 25%, 35% 75%;
+          transform: translate3d(-12%, 8%, 0);
+        }
+      }
+
+      /* Second star layer moves in a different direction */
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -2;
+        pointer-events: none;
+        background: radial-gradient(
+            circle at 5% 10%,
+            rgba(255, 255, 255, 0.85) 0px,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 6px
+          ),
+          radial-gradient(
+            circle at 22% 60%,
+            rgba(255, 255, 255, 0.85) 0px,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 5px
+          ),
+          radial-gradient(
+            circle at 48% 22%,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 5px
+          ),
+          radial-gradient(
+            circle at 66% 12%,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.8) 1.2px,
+            transparent 6px
+          ),
+          radial-gradient(
+            circle at 78% 60%,
+            rgba(255, 255, 255, 0.85) 0px,
+            rgba(255, 255, 255, 0.75) 1px,
+            transparent 6px
+          ),
+          radial-gradient(
+            circle at 40% 75%,
+            rgba(255, 255, 255, 0.8) 0px,
+            rgba(255, 255, 255, 0.7) 1px,
+            transparent 6px
+          );
+        opacity: 0.35;
+        mix-blend-mode: screen;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.12));
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
+        animation: movebg2 9s linear infinite alternate;
+      }
+
+      @keyframes movebg2 {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(10%, -6%, 0);
         }
       }
       .container {
-        max-width: 900px;
+        max-width: min(1200px, 80vw);
         margin: 40px auto;
         background: rgba(35, 39, 42, 0.98);
         padding: 2em;
@@ -90,7 +221,7 @@
         font-size: 1.1em;
       }
       input[type="text"] {
-        width: 100%;
+        width: 98%;
         padding: 0.7em;
         margin-bottom: 0.7em;
         border: 1.5px solid #444;
@@ -155,38 +286,80 @@
         }
       }
       .error {
-        color: #ff6b6b;
-        margin-top: 0.5em;
-        font-family: "Press Start 2P", Arial, sans-serif;
-        font-size: 0.95em;
-        letter-spacing: 1px;
-        text-shadow: 0 1px 2px #000a;
+        display: none;
+        margin-top: 1em;
+        padding: 1.2em;
+        background: linear-gradient(90deg, #2d2222 60%, #2d1a1c 100%);
+        border-radius: 8px;
+        color: #ffb6b6;
+        box-shadow: 0 1px 8px #ff000033;
+        font-size: 1.15em;
+        animation: cluepop 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        word-break: break-word;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Codebreaker Portal</h1>
+      <h1>AIT Forensics Dashboard</h1>
       <div class="code-section" id="section1">
-        <label for="code1">Enter Code 1:</label>
+        <label for="code1">Vul code 1 in (Hitster Nerd editie):</label>
         <input type="text" id="code1" autocomplete="off" />
         <button onclick="checkCode(1)">Unlock Clue 1</button>
         <div class="error" id="error1"></div>
         <div class="clue" id="clue1"></div>
       </div>
       <div class="code-section" id="section2">
-        <label for="code2">Enter Code 2:</label>
+        <label for="code1">Vul code 2 in (normale Hitster):</label>
         <input type="text" id="code2" autocomplete="off" />
         <button onclick="checkCode(2)">Unlock Clue 2</button>
         <div class="error" id="error2"></div>
         <div class="clue" id="clue2"></div>
       </div>
       <div class="code-section" id="section3">
-        <label for="code3">Enter Code 3:</label>
+        <label for="code3">Vul code 3 in (Codenames):</label>
         <input type="text" id="code3" autocomplete="off" />
         <button onclick="checkCode(3)">Unlock Clue 3</button>
         <div class="error" id="error3"></div>
         <div class="clue" id="clue3"></div>
+      </div>
+      <div class="code-section" id="section4">
+        <label for="code4">Vul code 4 in (Killer Sudoku):</label>
+        <input type="text" id="code4" autocomplete="off" />
+        <button onclick="checkCode(4)">Unlock Clue 4</button>
+        <div class="error" id="error4"></div>
+        <div class="clue" id="clue4"></div>
+      </div>
+      <div class="code-section" id="section5">
+        <label for="code5">Vul code 5 in (Nonogram):</label>
+        <input type="text" id="code5" autocomplete="off" />
+        <button onclick="checkCode(5)">Unlock Clue 5</button>
+        <div class="error" id="error5"></div>
+        <div class="clue" id="clue5"></div>
+      </div>
+      <div class="code-section" id="section6">
+        <label for="code6">Vul code 6 in (Morse code):</label>
+        <input type="text" id="code6" autocomplete="off" />
+        <button onclick="checkCode(6)">Unlock Clue 6</button>
+        <div class="error" id="error6"></div>
+        <div class="clue" id="clue6"></div>
+      </div>
+      <div class="code-section" id="section7">
+        <label for="code7">Vul code 7 in (rode bekers):</label>
+        <input type="text" id="code7" autocomplete="off" />
+        <button onclick="checkCode(7)">Unlock Clue 7</button>
+        <div class="error" id="error7"></div>
+        <div class="clue" id="clue7"></div>
+      </div>
+      <div class="code-section" id="section8">
+        <label for="code8">Vul code 8 in (Code Review):</label>
+        <input type="text" id="code8" autocomplete="off" />
+        <button onclick="checkCode(8)">Unlock Clue 8</button>
+        <div class="error" id="error8"></div>
+        <div class="clue" id="clue8"></div>
+      </div>
+      <div class="code-section" id="section9">
+        <label>Clue 9 is het resultaat van de woordzoeker.</label>
       </div>
     </div>
     <script src="portal.js"></script>
