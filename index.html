@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="assets/favicon.ico" />
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -198,6 +199,23 @@
         text-shadow: 0 2px 8px #0078d7, 0 0px 2px #000;
         animation: bounce 2s infinite alternate;
       }
+      .logo {
+        display: block;
+        max-width: 140px;
+        margin: 0 auto 12px;
+        height: auto;
+        filter: brightness(1.22) saturate(1.06)
+          drop-shadow(0 0 28px rgba(255, 255, 255, 0.95))
+          drop-shadow(0 0 36px rgba(255, 255, 255, 0.45));
+        transition: filter 200ms ease, transform 200ms ease;
+        will-change: filter, transform;
+      }
+      .logo:hover {
+        transform: translateY(-4px);
+        filter: brightness(1.55) saturate(1.12)
+          drop-shadow(0 0 28px rgba(255, 255, 255, 1))
+          drop-shadow(0 0 56px rgba(255, 255, 255, 0.7));
+      }
       @keyframes bounce {
         0% {
           transform: translateY(0);
@@ -301,6 +319,7 @@
   </head>
   <body>
     <div class="container">
+      <img src="assets/logolarge.png" alt="Logo" class="logo" />
       <h1>AIT Forensics Dashboard</h1>
       <div class="code-section" id="section1">
         <label for="code1">Vul code 1 in (Hitster Nerd editie):</label>
