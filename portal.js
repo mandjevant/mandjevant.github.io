@@ -41,6 +41,10 @@ const codeData = [
     hash: "ed8a7d43527f13b44c0796cf98a9df0974df258e1f82a82e28f2e3c0a2f5a526",
     clue: "RmVsaWNpdHkgaXMgZ2VwYWt0IG9wIGV4YW1lbmZyYXVkZSBlbiB3aWx0IHdyYWFrIG5lbWVuLg==",
   },
+  {
+    hash: "faadb00a0b7903793599ada710253e8b63115eb5a6d25fd2971e2837acd3cc06",
+    clue: "IkZvciBHb2Qgc28gbG92ZWQgdGhlIHdvcmxkIHRoYXQgaGUgZ2F2ZSBoaXMgb25lIGFuZCBvbmx5IFNvbiwgdGhhdCB3aG9ldmVyIGJlbGlldmVzIGluIGhpbSBzaGFsbCBub3QgcGVyaXNoIGJ1dCBoYXZlIGV0ZXJuYWwgbGlmZS4iIChGZWVsIGZyZWUgdG8gR29vZ2xlKQ==",
+  },
 ];
 
 function decodeBase64(str) {
@@ -58,6 +62,12 @@ async function checkCode(idx) {
   errorDiv.textContent = "";
   clueDiv.style.display = "none";
   clueDiv.textContent = "";
+  if (!codeData[idx - 1]) {
+    errorDiv.style.display = "block";
+    errorDiv.textContent =
+      "No code configured for this clue (no data available).";
+    return;
+  }
   if (!input) {
     errorDiv.textContent = "Please enter a code.";
     return;
